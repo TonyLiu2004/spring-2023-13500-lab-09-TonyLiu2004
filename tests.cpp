@@ -6,6 +6,5 @@
 // add your tests here
 TEST_CASE("Length") {
     Coord3D p = {10, 20, 30};
-    double test = 37.4166;
-    CHECK(length(&p) == test);
+    CHECK((length(&p)-37.4166) == 0);
 }
