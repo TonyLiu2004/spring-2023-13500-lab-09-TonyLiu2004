@@ -6,5 +6,6 @@
 // add your tests here
 TEST_CASE("Length") {
     Coord3D p = {10, 20, 30};
-    CHECK(length(&p) == round(37.4166));
+    double test = 37.4166;
+    CHECK(length(&p) == test);
 }
