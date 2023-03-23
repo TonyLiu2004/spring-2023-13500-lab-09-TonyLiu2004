@@ -15,6 +15,7 @@ TEST_CASE("FartherFromOrigin"){
     Coord3D * ans = fartherFromOrigin(&pointP, &pointQ);
     CHECK(ans == &pointP);
 }
+
 TEST_CASE("Velocity Move"){
     Coord3D pos = {0, 0, 100.0};
     Coord3D vel = {1, -5, 0.2};
@@ -23,4 +24,19 @@ TEST_CASE("Velocity Move"){
     CHECK(pos.x == 2);
     CHECK(pos.y == -10);
     CHECK(pos.z == 100.4);
+}
+
+TEST_CASE("Dynamic Memory add and delete"){
+    Coord3D *ppos = createCoord3D(10, 20, 30);
+    Coord3D *pvel = createCoord3D(5.5, -1.4, 7.77);
+    move(ppos, pvel, 10.0);
+
+    CHECK((*ppos).x == 2);
+    CHECK((*ppos).y == -10);
+    CHECK((*ppos).z == 100.4);
+
+    deleteCoord3D(ppos); // release memory
+    CHECK(&ppos == NULL);
+    deleteCoord3D(pvel);
+    CHECK(&pvel == NULL);
 }
