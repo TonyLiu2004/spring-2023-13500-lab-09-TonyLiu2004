@@ -1,8 +1,8 @@
-main: main.o funcs.o coord3d.o
-	g++ -o main main.o funcs.o coord3d.o
+main: main.o funcs.o
+	g++ -o main main.o funcs.o
 
-tests: tests.o funcs.o coord3d.o
-	g++ -o tests tests.o funcs.o coord3d.o
+tests: tests.o funcs.o
+	g++ -o tests tests.o funcs.o 
 
 
 
@@ -12,7 +12,5 @@ main.o: main.cpp funcs.h coord3d.h
 
 tests.o: tests.cpp doctest.h funcs.h coord3d.h
 
-coord3d.o: coord3d.h
-
 clean:
-	rm -f main.o funcs.o tests.o coord3d.o
+	rm -f main.o funcs.o tests.o
