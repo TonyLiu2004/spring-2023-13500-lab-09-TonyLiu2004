@@ -31,9 +31,9 @@ TEST_CASE("Dynamic Memory add and delete"){
     Coord3D *pvel = createCoord3D(5.5, -1.4, 7.77);
     move(ppos, pvel, 10.0);
 
-    CHECK((*ppos).x == 2);
-    CHECK((*ppos).y == -10);
-    CHECK((*ppos).z == 100.4);
+    CHECK((*ppos).x == 5.5);
+    CHECK((*ppos).y == -1.4);
+    CHECK((*ppos).z == 107.7);
 
     deleteCoord3D(ppos); // release memory
     CHECK(&ppos == NULL);
