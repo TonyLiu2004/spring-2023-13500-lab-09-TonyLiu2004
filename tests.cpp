@@ -36,7 +36,7 @@ TEST_CASE("Dynamic Memory add and delete"){
     CHECK((*ppos).z == 107.7);
 
     deleteCoord3D(ppos); // release memory
-    CHECK(&ppos == NULL);
+    CHECK(ppos == NULL);
     deleteCoord3D(pvel);
-    CHECK(&pvel == NULL);
+    CHECK(pvel == NULL);
 }
